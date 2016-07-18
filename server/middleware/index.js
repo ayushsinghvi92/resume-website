@@ -1,14 +1,15 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser')
+const express = require('express');
+const router = express.Router();
+const bodyParser = require('body-parser')
+const path = require('path')
 
-	let npmPath = __dirname + '../../node_modules';
-	let browserPath = __dirname + '../../browser';
+const browserPath = path.join(__dirname, '../../browser/');
+const npmPath = path.join(__dirname, '/../../node_modules');
 
-	app.use(express.static(npmPath));
-	app.use(express.static(browserPath));
+	router.use(express.static(npmPath));
+	router.use(express.static(browserPath));
 
-	app.use(bodyParser.urlencoded({extended: true}));
-	app.use(bodyParser.json())
-
-module.exports = app;
+	router.use(bodyParser.urlencoded({extended: true}));
+	router.use(bodyParser.json())
+	
+module.exports = router 

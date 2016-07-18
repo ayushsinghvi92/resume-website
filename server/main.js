@@ -1,10 +1,10 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-let port = 8000;
+const port = 8000;
 
-app.use(require('./middleware'));
-app.use(require('./routes'));
+app.use(require('./middleware'))
+app.use('/',require('./routes'))
 
 app.listen(port, function () {
 	console.log("Magic Happens on Port:", port )
