@@ -5,9 +5,11 @@ const path = require('path')
 
 const browserPath = path.join(__dirname, '../../browser/');
 const npmPath = path.join(__dirname, '/../../node_modules');
+const publicPath = path.join(__dirname, '/../../public')
 
 	router.use(express.static(npmPath));
 	router.use(express.static(browserPath));
+	router.use(express.static(publicPath));
 
 	router.use(bodyParser.urlencoded({extended: true}));
 	router.use(bodyParser.json())

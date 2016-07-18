@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan')
 
 const port = 8000;
-
+app.use(morgan('dev'))
 app.use(require('./middleware'))
 app.use('/',require('./routes'))
 
