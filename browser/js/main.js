@@ -1,1 +1,1 @@
-something
+const portfolio = angular.module('portfolio', ['ui.router'])
